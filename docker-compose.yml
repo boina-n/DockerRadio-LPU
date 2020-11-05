@@ -1,0 +1,14 @@
+version:  '3.3'
+services:
+  radio:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    hostname: panaf-app
+    volumes: 
+      - './playlist:/app/playlist'
+      - './music:/app/music'
+    restart: on-failure
+    ports:
+      - '8000:8000'
+    #  - '8001:80'
